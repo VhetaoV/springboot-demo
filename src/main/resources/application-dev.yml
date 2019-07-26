@@ -1,0 +1,89 @@
+#chy
+swagger: "2.0"
+info:
+ version: "1.0.5"
+#默认使用配置
+#spring:
+#  profiles:
+#    active: test
+server:
+  port: 8082
+  servlet:
+    session:
+      timeout: 12000000
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://192.168.1.199:3406/esweb?characterEncoding=UTF-8&useSSL=false
+    #url: jdbc:mysql://192.168.1.119:3306/esweb?characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://192.168.1.199:3306/esweb?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    database: 4
+    host: 192.168.1.199
+    port: 6379
+    password:
+
+#  servlet:
+#    multipart:
+#        enabled: true
+#        max-file-size: 20Mb
+#        max-request-size: 20Mb
+#  mvc:
+#    async:
+#      request-timeout: 10s
+#
+   
+# 定位模板的目录
+#  mvc:
+#  view:
+#      prefix: classpath:/templates/
+#      suffix: .html
+#  application:
+#    name: dubbo-spring-boot-starter
+#  dubbo:
+#    registry:
+#      #address: zookeeper://192.168.1.199:2181
+#      address: multicast://224.5.6.7:1234
+#  session:
+#    store-type: redis
+#    timeout: 12000000
+#    redis:
+#      flush-mode: on-save
+#      namespace: wxpc:session
+
+    
+#公共配置
+#mybatis:
+#  typeAliasesPackage: com.everstar.entity
+#  mapperLocations: classpath:mapping/*.xml
+  
+
+#mapper:
+#    mappers:
+#        - tk.mybatis.springboot.util.MyMapper
+#    not-empty: false
+#    identity: MYSQL
+#
+#pagehelper:
+#    helperDialect: mysql
+#    reasonable: true
+#    supportMethodsArguments: true
+#    params: count=countSql
+  #configuration:
+    #map-underscore-to-camel-case: true
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  level:
+    com.everstar: info
